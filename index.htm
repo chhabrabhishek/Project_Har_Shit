@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./style.css">
+      <title>Har-Shit</title>
+   </head>
+   
+   <body>
+      <div class="container">
+         <form>
+            <button type="button" class="btn btn-primary add" id="add">Add New</button>
+            <div class="form-group">
+                  <input type="text" class="form-control" id="marka" placeholder="Enter Marka" name="marka">
+            </div>
+            <div class="form-group">
+                  <input type="text" class="form-control" id="noOfBox" placeholder="Enter the number of boxes" name="noOfBox">
+            </div>
+            <button type="submit" class="btn btn-success" id="submit">Submit</button>
+         </form>
+      </div>
+
+      <script type="text/javascript">
+         const ipcRenderer = require('electron').ipcRenderer;
+         const btnclick = document.getElementById('add');
+         btnclick.addEventListener('click', () => {
+            ipcRenderer.send("btnclick");
+         });
+         const mark = document.getElementById('marka');
+         const boxes = document.getElementById('noOfBox');
+         const submitBtn = document.getElementById('submit');
+         submitBtn.addEventListener('click', () => {
+            ipcRenderer.send("submitBtnClick", [mark.value, boxes.value]);
+         })
+      </script>
+   </body>
+</html>
