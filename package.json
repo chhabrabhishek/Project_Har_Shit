@@ -16,7 +16,5 @@
     "nedb": "^1.8.0",
     "popper.js": "^1.15.0"
   },
-  "devDependencies": {
-    "electron": "^6.0.8"
-  }
+  "devDependencies": {}
 }

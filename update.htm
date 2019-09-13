@@ -33,7 +33,7 @@
         let mark = document.getElementById('marka');
         let trans = document.getElementById('transport');
         btnclick.addEventListener('click', function () {
-            ipcRenderer.send("add_data", [loca.value, mark.value, trans.value]);
+            ipcRenderer.send("update_data", [loca.value, mark.value, trans.value]);
         });
      </script>
    </body>

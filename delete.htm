@@ -11,16 +11,8 @@
       <div class="container">
         <form style="padding-top: 100px">
             <div class="form-group">
-                <label for="location">Location :</label>
-                <input type="text" class="form-control" id="location" placeholder="Enter Location" name="location">
-            </div>
-            <div class="form-group">
                 <label for="marka">Marka :</label>
                 <input type="text" class="form-control" id="marka" placeholder="Enter Marka" name="marka">
-            </div>
-            <div class="form-group">
-                <label for="transport">Transport :</label>
-                <input type="text" class="form-control" id="transport" placeholder="Enter Transport" name="transport">
             </div>
             <button type="submit" class="btn btn-success" id="submit">Submit</button>
         </form>
@@ -29,11 +21,9 @@
       <script type="text/javascript">
         const ipcRenderer = require('electron').ipcRenderer;
         const btnclick = document.getElementById('submit');
-        let loca = document.getElementById('location');
         let mark = document.getElementById('marka');
-        let trans = document.getElementById('transport');
         btnclick.addEventListener('click', function () {
-            ipcRenderer.send("add_data", [loca.value, mark.value, trans.value]);
+            ipcRenderer.send("delete_data", mark.value);
         });
      </script>
    </body>
